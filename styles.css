@@ -1,30 +1,48 @@
+h3{
+    color: #f2f6e9;
+    
+}
+
+.addcolor{
+    background:#222;
+    color: #f2f6e9;
+}
+
 body {
  padding: 0px;
  margin: 0px;
  background: #f2f6e9;
+    margin-top: 50px;
 }
 /*--- navigation bar ---*/
 .navbar {
- background:#6ab446;
+ background-color:#456C6C;
+    position:fixed;
+    top:0;
+    z-index: 100;
+    width:100%;
+        
+    
 }
 .nav-link, .navbar-brand {
- color: #fff;
+ color: #f2f6e9;
  cursor: pointer;
 }
 .nav-link {
  margin-right: 1em !important;
 }
 .nav-link:hover {
- color: #000;
+ color: #333;
 }
 .navbar-collapse {
  justify-content: flex-end;
 }
 .header {
- background-image: url('lights.jpg');
+ background-image: url('m1.png');
  background-size: cover;
  background-position: center;
  position: relative;
+    max-height:300px;
 }
 .overlay {
  position: absolute;
@@ -32,7 +50,7 @@ body {
  min-width: 100%;
  left: 0px;
  top: 0px;
- background-color: rgba(0, 0, 0, 0.4);
+ background-color: rgba(69, 108, 108, 0.3);
 }
 .description {
  left: 50%;
@@ -42,23 +60,23 @@ body {
  text-align: center;
 }
 .description h1 {
- color: #6ab446;
+ color: #456C6C;
 }
 .description p {
- color: #fff;
+ color: #f2f6e9;
  font-size: 1.3rem;
  line-height: 1.5;
 }
 .description button {
- border:1px solid #6ab446;
- background-color: #6ab446;
+ border:1px solid #456C6C;
+ background-color: #456C6C;
  border-radius: 0;
- color: #fff;
+ color: #f2f6e9;
 }
 .description button:hover {
- border:1px solid #fff;
- background-color: #fff;
- color: #000;
+ border:1px solid #f2f6e9;
+ background-color: #f2f6e9;
+ color: #333;
 }
 .features {
  margin: 4em auto;
@@ -66,7 +84,7 @@ body {
  position: relative;
 }
 .feature-title {
- color: #333;
+ color: #f2f6e9;
  font-size: 1.3rem;
  font-weight: 700;
  margin-bottom: 20px;
@@ -83,9 +101,9 @@ body {
  border-radius: 0;
 }
 .features .btn {
- background-color: #589b37;
- border: 1px solid #589b37;
- color: #fff;
+ background-color: #456C6C;
+ border: 1px solid #456C6C;
+ color: #f2f6e9;
  margin-top: 20px;
 }
 .features .btn:hover {
@@ -93,23 +111,12 @@ body {
  border: 1px solid #333;
 }
 .page-footer {
- background-color: #222;
- color: #ccc;
+ background-color: #456C6C;
+ color: #f2f6e9;
  padding: 60px 0 30px;
 }
-.footer-copyright {
- color: #666;
- padding: 40px 0;
-}
-@media (max-width: 575.98px) {
-     .description {
- left: 0;
- padding: 0 15px;
- position: absolute;
- top: 10%;
- transform: none;
- text-align: center;
- }
+
+
 
  .description h1 {
  font-size: 2em;
@@ -122,4 +129,18 @@ body {
  .features {
  margin: 0;
  }
+.section-title {
+ color: #333;
+ font-size: 2rem;
+ font-weight: 700;
+ margin-bottom: 20px;
+ text-transform: uppercase;
+}
+.section-title2 {
+ color: #f2f6e9;
+ font-size: 2rem;
+ font-weight: 700;
+ margin-bottom: 20px;
+ text-transform: uppercase;
+ text-align: right
 }
