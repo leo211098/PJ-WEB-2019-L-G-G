@@ -2,10 +2,16 @@ h3{
     color: #f2f6e9;
     
 }
+span{
+    color: #f2f6e9;
+}
 
 .addcolor{
     background:#222;
     color: #f2f6e9;
+}
+.addcolor2{
+    background:#f2f6e9;
 }
 
 body {
@@ -38,7 +44,7 @@ body {
  justify-content: flex-end;
 }
 .header {
- background-image: url('m1.png');
+ background-image: url('img/site/m1.png');
  background-size: cover;
  background-position: center;
  position: relative;
@@ -84,6 +90,13 @@ body {
  position: relative;
 }
 .feature-title {
+ color: #333;
+ font-size: 1.3rem;
+ font-weight: 700;
+ margin-bottom: 20px;
+ text-transform: uppercase;
+}
+.feature-title2 {
  color: #f2f6e9;
  font-size: 1.3rem;
  font-weight: 700;
@@ -114,6 +127,7 @@ body {
  background-color: #456C6C;
  color: #f2f6e9;
  padding: 60px 0 30px;
+    text-align: center;
 }
 
 
@@ -144,3 +158,40 @@ body {
  text-transform: uppercase;
  text-align: right
 }
+
+
+
+.imgcache {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height:300px;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middleelem {
+  transition: .7s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.lirededans:hover .imgcache {
+  opacity: 0.6;
+}
+
+.lirededans:hover .middleelem {
+  opacity: 1;
+}
+
+.textinterieur {
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+
