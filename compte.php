@@ -1,3 +1,20 @@
+<?php
+
+session_start();
+foreach($_SESSION['panier'] as $item) {
+                    echo $item;
+                }
+    if(isset($_SESSION['utilisateur']) && $_SESSION['utilisateur'] != "")
+        {
+            //Task to do
+           
+         }
+    else{
+            header('Location: login.php'); //redirect URL
+        }
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,71 +46,56 @@
  </button>
  <div class="collapse navbar-collapse" id="main-navigation">
  <ul class="navbar-nav">
- <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
- <li class="nav-item"><a class="nav-link" href="categories.html">Categories</a></li>
- <li class="nav-item"><a class="nav-link" href="#">Ventes Flash</a></li>
- <li class="nav-item"><a class="nav-link" href="#">Vendre</a></li>
- <li class="nav-item"><a class="nav-link" href="#">Mon Compte</a></li>
- <li class="nav-item"><a class="nav-link" href="#">Panier</a></li>
- <li class="nav-item"><a class="nav-link" href="#">Admin</a></li>
+ <li class="nav-item"><a class="nav-link" href="accueil.php">Accueil</a></li>
+ <li class="nav-item"><a class="nav-link" href="categories.php">Categories</a></li>
+ <li class="nav-item"><a class="nav-link" href="ventesflash.php">Ventes Flash</a></li>
+ <li class="nav-item"><a class="nav-link" href="vendre.php">Vendre</a></li>
+ <li class="nav-item"><a class="nav-link" href="compte.php">Mon Compte</a></li>
+ <li class="nav-item"><a class="nav-link" href="panier.php">Panier</a></li>
+ <li class="nav-item"><a class="nav-link" href="admin.php">Admin</a></li>
  </ul>
  </div>
 </nav>
     
 	<div class="container-fluid features">
         <br><br>
-        <h3 class="section-title">Rien de mieux qu'une bonne lecture.</h3><br><br><br>
-		<div class="row">
+        <h3 class="section-title">Bienvenue sur votre profil !</h3>
+            <a class="btn btn-lg btn-primary btn-block" href="logouttraitement.php">Se deconnecter</a>
+            <br>
+        <div class="row">
             <?php
             $database = "AmazonECE";
             $db_handle = mysqli_connect('localhost', 'root', 'root');
             $db_found = mysqli_select_db($db_handle, $database);
             if ($db_found)
              {
-                $sql = "SELECT * FROM Article";
+                $sql = "SELECT * FROM `Utilisateur` WHERE `Mail` LIKE '".$_SESSION['utilisateur']."'";
                 $result = mysqli_query($db_handle, $sql);
-                $int=0;
-
-            while ($data = mysqli_fetch_assoc($result))
-            {$int++;
-             if($int==5){
-                 $int=0;
+                $data = mysqli_fetch_assoc($result);
+        
             ?>
-            </div>
-            <br>
-            <div class="row">
-            <?php 
-             }
-            ?>
-
-             <div class="col-lg-3 col-md-3 col-sm-12">
+            
+             <div class="col-lg-5 col-md-3 col-sm-12">
                 
-                    <a href="img/produits/livres/<?php echo $data['Img']; ?>" target="_blank">
-                    <img class="img-fluid" src="img/produits/livres/<?php echo $data['Img']; ?>">
-                    </a>
-                    
+                    <img class="img-fluid" src="img/comptes/<?php echo $data['Img']; ?>">
+              </div>
+                
+              <div class="col-lg-7 col-md-3 col-sm-12">
+                  
+                  
                     <h5><?php echo $data['Nom']; ?></h5>
-                    
+                    <h5><?php echo $data['Prenom']; ?></h5>
                     <span>Prix : <?php echo $data['Prix']; ?> €</span>
                     <p> <?php echo $data['Description']; ?></p>
 
-                    <FORM>
-                    <input class="ajouterpanier" formaction='gestionpanier.php'
-                     type="button"
-                     value="Ajouter au Panier">
-                    <input type="hidden" name="ID" value="<?php echo $data['ID'];?>">
-
-
-                    </FORM>
                     
               </div>
-
 
     <?php
 
          }
             	
-    }
+    
     else {
         echo "Database not found";
     }
