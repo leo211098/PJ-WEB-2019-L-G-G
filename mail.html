@@ -202,64 +202,7 @@ $tmp_file = $_FILES['image']['tmp_name'];
 
 
 <?php 
-session_start(); 
-require_once("nouveauvendeur.php");
-if(isset($_POST['Name']))      $name=$_POST['Name'];
-else      $name="";
 
-
-if(isset($_POST['prenom']))      $prenom=$_POST['prenom'];
-else      $prenom="";
-
-
-if(isset($_POST['mail']))      $mail=$_POST['mail'];
-else      $mail="";
-
-if(isset($_POST['adresse1']))      $adresse1=$_POST['adresse1'];
-else      $adresse1="";
-
-
-if(isset($_POST['adresse2']))      $adresse2=$_POST['adresse2'];
-else      $adresse2="";
-
-if(isset($_POST['ville']))      $ville=$_POST['ville'];
-else      $ville="";
-
-if(isset($_POST['cp']))      $cp=$_POST['cp'];
-else      $cp="";
-
-
-if(isset($_POST['pays']))      $pays=$_POST['pays'];
-else      $pays="";
-
-
-if(isset($_POST['numtel']))      $numtel=$_POST['numtel'];
-else      $numtel="";
-
-
-if(isset($_POST['numcarte']))      $numcarte=$_POST['numcarte'];
-else      $numcarte="";
-
-if(isset($_POST['typecarte']))      $typecarte=$_POST['typecarte'];
-else      $typecare="";
-
-
-if(isset($_POST['datexp']))      $datexp=$_POST['datexp'];
-else      $datexp="";
-
-if(isset($_POST['codsec']))      $codsec=$_POST['codsec'];
-else      $codsec="";
-
-
-if(isset($_POST['mdp']))      $mdp=$_POST['mdp'];
-else      $mdp="";
-
-
-if(isset($_POST['mdpc']))      $mdpc=$_POST['mdpc'];
-else      $mdpc="";
-
-if(isset($_POST['nomcarte']))      $nomcarte=$_POST['nomcarte'];
-else      $nomcarte="";
 
 
 // On commence par récupérer les champs 
