@@ -28,13 +28,13 @@
  </button>
  <div class="collapse navbar-collapse" id="main-navigation">
  <ul class="navbar-nav">
- <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
- <li class="nav-item"><a class="nav-link" href="categories.html">Categories</a></li>
- <li class="nav-item"><a class="nav-link" href="#">Ventes Flash</a></li>
- <li class="nav-item"><a class="nav-link" href="#">Vendre</a></li>
- <li class="nav-item"><a class="nav-link" href="#">Mon Compte</a></li>
- <li class="nav-item"><a class="nav-link" href="#">Panier</a></li>
- <li class="nav-item"><a class="nav-link" href="#">Admin</a></li>
+ <li class="nav-item"><a class="nav-link" href="accueil.php">Accueil</a></li>
+ <li class="nav-item"><a class="nav-link" href="categories.php">Categories</a></li>
+ <li class="nav-item"><a class="nav-link" href="ventesflash.php">Ventes Flash</a></li>
+ <li class="nav-item"><a class="nav-link" href="vendre.php">Vendre</a></li>
+ <li class="nav-item"><a class="nav-link" href="compte.php">Mon Compte</a></li>
+ <li class="nav-item"><a class="nav-link" href="panier.php">Panier</a></li>
+ <li class="nav-item"><a class="nav-link" href="admin.php">Admin</a></li>
  </ul>
  </div>
 </nav>
@@ -42,42 +42,42 @@
 <div class="container-fluid p-0">
     <div class="row">
          <div class="col-lg-6 col-md-6 col-sm-12 lirededans">
-             <a href="index.html">
+             <a href="ventes.php?categorie=livres">
                 <img src="img/site/livresfull.jpg" alt="Avatar" class="img-fluid imgcache" style="width:100%">
-             </a>
             <div class="middleelem">
                 <div class="textinterieur">
-                    <span>tfgh</span><br>
+                    <span>Livres</span><br>
                     <span>tfgh</span>
                 </div>
             </div>
+             </a>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-12 lirededans">
-            <a href="index.html">
+            <a href="ventes.php?categorie=musique">
                 <img src="img/site/musiquefull.jpg" alt="Avatar" class="img-fluid imgcache" style="width:100%">
-            </a>
             <div class="middleelem">
                 <div class="textinterieur">John Doe</div>
             </div>
+            </a>
         </div>
     </div>
     <div class="addcolor2"><br></div>
     <div class="row">
          <div class="col-lg-6 col-md-6 col-sm-12 lirededans">
-             <a href="index.html">
+             <a href="ventes.php?categorie=vetements">
                  <img src="img/site/vetementsfull.jpg" alt="Avatar" class="img-fluid imgcache" style="width:100%">
-             </a>
             <div class="middleelem">
-                <div class="textinterieur">John Doe</div>
+                <div class="textinterieur">Vetements</div>
             </div>
+            </a>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-12 lirededans">
-            <a href="index.html">
+            <a href="ventes.php?categorie=loisirs">
                 <img src="img/site/loisirsfull.jpg" alt="Avatar" class="img-fluid imgcache" style="width:100%">
-            </a>
             <div class="middleelem">
-                <div class="textinterieur">John Doe</div>
+                <div class="textinterieur">Loisirs</div>
             </div>
+            </a>
         </div>
     </div>
 </div>

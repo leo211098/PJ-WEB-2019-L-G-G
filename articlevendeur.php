@@ -1,8 +1,3 @@
-<?php
-if($_GET['erreur']=="true"){
-echo "<script type='text/javascript'>alert('Verifiez votre adresse mail ou votre mot de passe');</script>";
-}
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,7 +21,6 @@ echo "<script type='text/javascript'>alert('Verifiez votre adresse mail ou votre
     
 </head>
 
-
 <body>
 	<nav class="navbar navbar-expand-md">
  <a class="navbar-brand" href="#">Logo</a>
@@ -48,21 +42,50 @@ echo "<script type='text/javascript'>alert('Verifiez votre adresse mail ou votre
     
 	<div class="container-fluid features">
         <br><br>
-       
-      <form class="form-signin" method="POST" action="logintraitement.php">
-        <h2 >Veuillez rentrer votre adresse mail et votre mot de passe.</h2>
-        <br><br>
-	  <input type="text" name="username" class="form-control" placeholder="Adresse Mail" required>
-          <br>
-        <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Mot de passe" required>
-          <br><br>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
-        <a class="btn btn-lg btn-primary btn-block" href="register.php">Register</a>
-      </form>
- 
+        <div class="row">
+            <?php
+            $database = "AmazonECE";
+            $db_handle = mysqli_connect('localhost', 'root', 'root');
+            $db_found = mysqli_select_db($db_handle, $database);
+            if ($db_found)
+             {
+                $sql = "SELECT * FROM `Article` WHERE `Id` = ".$_GET['idarticle'];
+                $result = mysqli_query($db_handle, $sql);
+                $data = mysqli_fetch_assoc($result);
+        
+            ?>
+
+             <div class="col-lg-5 col-md-3 col-sm-12">
+                
+                    <img class="img-fluid" src="img/produits/<?php echo $data['Img']; ?>">
+              </div>
+                
+              <div class="col-lg-5 col-md-3 col-sm-12">
+                    <h5><?php echo $data['Nom']; ?></h5>
+                    
+                    <span>Prix : <?php echo $data['Prix']; ?> €</span>
+                    <p> <?php echo $data['Description']; ?></p>
+
+                    <form method="POST" action="supprimerarticle.php">
+                        <button class="btn btn-lg btn-primary btn-block" type="submit" name="Idarticle" value="<?php echo $data['Id']; ?>">Supprimer de la vente</button>
+                    </form>
+              </div>
+
+    <?php
+
+         }
+            	
+    
+    else {
+        echo "Database not found";
+    }
+        mysqli_close($db_handle);
+    ?>
+
+        </div>
+        
     </div>
 		<br><br><br>
-    
 
 </body>
  <footer class="page-footer">
@@ -76,4 +99,3 @@ echo "<script type='text/javascript'>alert('Verifiez votre adresse mail ou votre
         
 </footer>
 </html>
- <?php
